@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071c2f">
+
+  <title>Website Development Agreement | Codixa Solutions</title>
+
+  <style>
+    :root {
+      --navy: #071c2f;
+      --navy-light: #102b42;
+      --cyan: #63b0d4;
+      --cyan-light: #eaf6fb;
+      --text: #243447;
+      --muted: #64748b;
+      --border: #dce5ec;
+      --surface: #f4f8fb;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 16px;
+      background: #edf2f6;
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .toolbar {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar button {
+      border: 0;
+      border-radius: 7px;
+      padding: 11px 18px;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .toolbar button:hover {
+      background: #173c58;
+    }
+
+    .toolbar .secondary {
+      background: var(--cyan);
+      color: var(--navy);
+    }
+
+    .agreement {
+      width: 100%;
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(7, 28, 47, 0.09);
+    }
+
+    /* Company header */
+
+    .header {
+      position: relative;
+      padding: 28px 34px 25px;
+      color: white;
+      background: var(--navy);
+      border-bottom: 5px solid var(--cyan);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(99, 176, 212, 0.65);
+      border-radius: 10px;
+      color: var(--cyan);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-tagline {
+      margin: 3px 0 0;
+      color: #c5d9e7;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .document-label {
+      flex-shrink: 0;
+      padding: 7px 11px;
+      border: 1px solid rgba(99, 176, 212, 0.65);
+      border-radius: 5px;
+      color: #bfe9fa;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .header-title {
+      margin: 25px 0 5px;
+      font-size: 27px;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+    }
+
+    .header-description {
+      max-width: 540px;
+      margin: 0;
+      color: #cfdeea;
+      font-size: 12px;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 19px;
+      padding-top: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      color: #d7e5ee;
+      font-size: 11px;
+    }
+
+    .header-meta strong {
+      color: white;
+    }
+
+    /* Main content */
+
+    .content {
+      padding: 27px 34px 25px;
+    }
+
+    .intro {
+      margin: 0 0 20px;
+      color: #45566a;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 23px 0 11px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.35px;
+      text-transform: uppercase;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .section-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 27px;
+      height: 27px;
+      border-radius: 6px;
+      background: var(--cyan-light);
+      color: var(--navy);
+      font-size: 12px;
+    }
+
+    /* Party cards */
+
+    .parties {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+      margin: 18px 0 22px;
+    }
+
+    .party-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fbfdff;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .party-card.developer {
+      border-top: 3px solid var(--cyan);
+    }
+
+    .party-card.client {
+      border-top: 3px solid var(--navy);
+    }
+
+    .party-label {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .field {
+      margin: 10px 0 0;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .editable {
+      display: inline-block;
+      min-width: 80px;
+      max-width: 100%;
+      min-height: 21px;
+      padding: 1px 3px;
+      border-bottom: 1px dashed #9aafbf;
+      outline: none;
+      overflow-wrap: anywhere;
+    }
+
+    .editable:focus {
+      background: var(--cyan-light);
+      border-bottom-color: var(--cyan);
+    }
+
+    .block-editable {
+      display: block;
+      width: 100%;
+      min-height: 23px;
+    }
+
+    .placeholder {
+      color: #71869a;
+    }
+
+    /* Contract terms */
+
+    p {
+      margin: 7px 0 10px;
+    }
+
+    .terms {
+      margin: 8px 0 12px;
+      padding-left: 20px;
+    }
+
+    .terms > li {
+      margin-bottom: 8px;
+      padding-left: 3px;
+    }
+
+    .terms ul {
+      margin-top: 6px;
+      padding-left: 19px;
+    }
+
+    .terms ul li {
+      margin-bottom: 5px;
+    }
+
+    .scope-card {
+      margin: 10px 0 14px;
+      padding: 14px 16px;
+      border: 1px solid #d8e9f1;
+      border-radius: 8px;
+      background: #f6fbfe;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .scope-card ul {
+      margin: 0;
+      padding-left: 19px;
+    }
+
+    .scope-card li {
+      margin-bottom: 7px;
+    }
+
+    .scope-card li:last-child {
+      margin-bottom: 0;
+    }
+
+    .term-title {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .info-note {
+      margin: 12px 0;
+      padding: 11px 14px;
+      border-left: 3px solid var(--cyan);
+      background: var(--surface);
+      color: #465a6d;
+      font-size: 11px;
+    }
+
+    /* Payment table */
+
+    .payment-table {
+      width: 100%;
+      margin: 12px 0 14px;
+      border-collapse: collapse;
+      font-size: 11px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .payment-table th {
+      padding: 10px;
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .payment-table td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .payment-table tbody tr:nth-child(even) {
+      background: #f6f9fc;
+    }
+
+    /* Signatures */
+
+    .signature-section {
+      margin-top: 27px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .signature-intro {
+      margin-bottom: 17px;
+      color: #536578;
+      font-size: 11px;
+    }
+
+    .signatures {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .signature-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fbfdff;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .signature-card h3 {
+      margin: 0 0 35px;
+      color: var(--navy);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .signature-line {
+      min-height: 24px;
+      margin-bottom: 7px;
+      border-bottom: 1px solid #64748b;
+    }
+
+    .signature-caption {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .signature-field {
+      margin-top: 9px;
+      font-size: 11px;
+    }
+
+    /* Footer */
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 34px;
+      border-top: 1px solid var(--border);
+      background: #f6f9fc;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .footer strong {
+      color: var(--navy);
+    }
+
+    .footer-brand {
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    [contenteditable="true"] {
+      cursor: text;
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px 8px;
+        font-size: 12px;
+      }
+
+      .header {
+        padding: 22px 18px;
+      }
+
+      .header-top {
+        align-items: flex-start;
+      }
+
+      .brand {
+        gap: 8px;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        font-size: 21px;
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-tagline {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+      }
+
+      .document-label {
+        padding: 6px;
+        font-size: 8px;
+      }
+
+      .header-title {
+        margin-top: 23px;
+        font-size: 23px;
+      }
+
+      .header-meta {
+        gap: 8px 15px;
+      }
+
+      .content {
+        padding: 20px 17px;
+      }
+
+      .parties,
+      .signatures {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .section-heading {
+        font-size: 12px;
+      }
+
+      .payment-table {
+        font-size: 10px;
+      }
+
+      .payment-table th,
+      .payment-table td {
+        padding: 7px 6px;
+      }
+
+      .footer {
+        padding: 13px 17px;
+      }
+
+      .toolbar button {
+        flex: 1;
+      }
+    }
+
+    /* A4 print / Save as PDF */
+
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    @media print {
+      html,
+      body {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        background: white;
+        color: #243447;
+        font-size: 10px;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .agreement {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+      }
+
+      .header {
+        padding: 18px 22px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .header-title {
+        font-size: 23px;
+      }
+
+      .content {
+        padding: 17px 22px;
+      }
+
+      .section-heading {
+        margin-top: 17px;
+        margin-bottom: 8px;
+      }
+
+      .parties {
+        gap: 10px;
+      }
+
+      .party-card {
+        padding: 11px;
+      }
+
+      .scope-card {
+        padding: 10px 12px;
+      }
+
+      .signature-section {
+        margin-top: 20px;
+      }
+
+      .signature-card {
+        padding: 12px;
+      }
+
+      .signature-card h3 {
+        margin-bottom: 28px;
+      }
+
+      .footer {
+        padding: 11px 22px;
+      }
+
+      .editable {
+        border-bottom-color: transparent;
+      }
+
+      .placeholder {
+        color: #596b7b;
+      }
+
+      .section-heading,
+      .party-card,
+      .scope-card,
+      .payment-table,
+      .signature-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      h1,
+      h2,
+      h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Screen-only toolbar -->
+  <div class="toolbar">
+    <button type="button" class="secondary" onclick="window.print()">
+      Print / Save as PDF
+    </button>
+    <button type="button" onclick="resetPlaceholders()">
+      Reset Template
+    </button>
+  </div>
+
+  <main class="agreement">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">I</div>
+
+          <div>
+            <p class="brand-name">Iram Khalid</p>
+            <p class="brand-tagline">Full Stack Website Developer</p>
+          </div>
+        </div>
+
+        <div class="document-label">
+          Official Document<br>
+          Development Contract
+        </div>
+
+      </div>
+
+      <h1 class="header-title">Website Development Agreement</h1>
+
+      <p class="header-description">
+        A written agreement outlining the project scope, deliverables,
+        responsibilities, payment terms and conditions of website development.
+      </p>
+
+      <div class="header-meta">
+        <span><strong>Agreement No.:</strong>
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Agreement Number]">[Agreement Number]</span>
+        </span>
+
+        <span><strong>Effective Date:</strong>
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[DD/MM/YYYY]">[DD/MM/YYYY]</span>
+        </span>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <p class="intro">
+        This Website Development Agreement ("Agreement") is made between the
+        Client and the Developer identified below on the Effective Date.
+        Both parties agree to the following terms and conditions. The parties
+        should review and complete all applicable fields before signing.
+      </p>
+
+      <!-- Parties -->
+      <div class="parties">
+
+        <section class="party-card client">
+          <h2 class="party-label">01 / Client Information</h2>
+
+          <div class="field">
+            <span class="field-label">Full Legal Name / Business Name</span>
+            <span class="editable block-editable placeholder"
+                  contenteditable="true"
+                  data-placeholder="[Client's Full Legal Name]">[Client's Full Legal Name]</span>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Address</span>
+            <span class="editable block-editable placeholder"
+                  contenteditable="true"
+                  data-placeholder="[Client Address]">[Client Address]</span>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Email / Phone</span>
+            <span class="editable block-editable placeholder"
+                  contenteditable="true"
+                  data-placeholder="[Client Contact Details]">[Client Contact Details]</span>
+          </div>
+        </section>
+
+        <section class="party-card developer">
+          <h2 class="party-label">02 / Developer Information</h2>
+
+          <div class="field">
+            <span class="field-label">Company / Agency</span>
+            <strong>Codixa Solutions</strong>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Authorized Representative</span>
+            <span class="editable block-editable placeholder"
+                  contenteditable="true"
+                  data-placeholder="[Representative Name]">[Representative Name]</span>
+          </div>
+
+          <div class="field">
+            <span class="field-label">Address / Email / Phone</span>
+            <span class="editable block-editable placeholder"
+                  contenteditable="true"
+                  data-placeholder="[Business Contact Details]">[Business Contact Details]</span>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Scope -->
+      <h2 class="section-heading">
+        <span class="section-number">01</span>
+        Scope of Work & Deliverables
+      </h2>
+
+      <p>
+        The Developer agrees to design, develop and implement the following
+        functionality for the Client, subject to the requirements and
+        approvals agreed by both parties.
+      </p>
+
+      <div class="scope-card">
+        <ul>
+          <li>
+            <strong class="term-title">Centralized Office Backend:</strong>
+            Development of a centralized backend for linked management of
+            the first and second custom PHP websites.
+          </li>
+
+          <li>
+            <strong class="term-title">Multi-Tier Pricing Engine:</strong>
+            Implementation of three pricing levels: Office Cost, Site 1 Price,
+            and Site 2 Markup / Discount Price.
+          </li>
+
+          <li>
+            <strong class="term-title">Inventory & Stock Synchronization:</strong>
+            Synchronization of stock status between the connected websites,
+            including in-stock and out-of-stock indicators and the agreed
+            automatic display or hiding of prices and related buttons.
+          </li>
+
+          <li>
+            <strong class="term-title">Quotation Page Optimization:</strong>
+            Implementation of agreed loading optimizations for quotation pages.
+          </li>
+
+          <li>
+            <strong class="term-title">Label Printing Integration:</strong>
+            Integration with BarTender software for label printing, including
+            the agreed formats with and without a logo, subject to compatible
+            software, licenses, hardware and access being provided.
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        Any feature, third-party integration, design revision or functionality
+        not expressly described in this section is outside the agreed scope
+        unless approved in writing by both parties.
+      </p>
+
+      <!-- Timeline -->
+      <h2 class="section-heading">
+        <span class="section-number">02</span>
+        Timeline & Project Milestones
+      </h2>
+
+      <ol class="terms">
+        <li>
+          <strong class="term-title">Start Date:</strong>
+          Work will commence on
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Project Start Date]">[Project Start Date]</span>,
+          subject to receipt of the agreed advance payment and necessary
+          project access, requirements and materials.
+        </li>
+
+        <li>
+          <strong class="term-title">Target Completion:</strong>
+          The target completion date is
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Completion Date]">[Completion Date]</span>.
+          The timeline may be reasonably adjusted if requirements change,
+          approvals are delayed or third-party dependencies arise.
+        </li>
+
+        <li>
+          <strong class="term-title">Progress Updates:</strong>
+          The Developer will provide reasonable progress updates, milestone
+          reviews and staging versions for testing as agreed by both parties.
+        </li>
+
+        <li>
+          <strong class="term-title">Client Cooperation:</strong>
+          The Client will provide timely feedback, credentials, content,
+          product data, software access and approvals necessary for delivery.
+        </li>
+      </ol>
+
+      <!-- Payment -->
+      <h2 class="section-heading">
+        <span class="section-number">03</span>
+        Payment Terms & Financials
+      </h2>
+
+      <p>
+        The total agreed project fee and payment schedule will be completed
+        and approved by both parties before work begins.
+      </p>
+
+      <table class="payment-table">
+        <thead>
+          <tr>
+            <th>Payment Stage</th>
+            <th>Amount</th>
+            <th>Due Date / Condition</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Advance Deposit</td>
+            <td>
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[Amount / 50%]">[Amount / 50%]</span>
+            </td>
+            <td>Upon signing this Agreement</td>
+          </tr>
+
+          <tr>
+            <td>Final Balance</td>
+            <td>
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[Amount / 50%]">[Amount / 50%]</span>
+            </td>
+            <td>Upon completion of agreed testing and delivery terms</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ol class="terms">
+        <li>
+          <strong class="term-title">Total Project Fee:</strong>
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Total Fee and Currency]">[Total Fee and Currency]</span>.
+        </li>
+
+        <li>
+          <strong class="term-title">Payment Method:</strong>
+          Payments will be made through
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Bank Transfer / Cash / Online]">[Bank Transfer / Cash / Online]</span>.
+        </li>
+
+        <li>
+          <strong class="term-title">Additional Work:</strong>
+          Work outside the agreed scope will require written approval of the
+          additional charges and any timeline changes before implementation.
+        </li>
+
+        <li>
+          <strong class="term-title">Third-Party Costs:</strong>
+          Hosting, domains, software subscriptions, licenses, paid APIs and
+          other third-party charges are excluded unless expressly included
+          in the written project quotation.
+        </li>
+      </ol>
+
+      <!-- Responsibilities -->
+      <h2 class="section-heading">
+        <span class="section-number">04</span>
+        Roles & Responsibilities
+      </h2>
+
+      <ol class="terms">
+        <li>
+          <strong class="term-title">Developer Responsibilities:</strong>
+          The Developer will perform the agreed development work with
+          reasonable professional care, communicate material issues and
+          provide the deliverables specified in this Agreement.
+        </li>
+
+        <li>
+          <strong class="term-title">Client Responsibilities:</strong>
+          The Client will provide accurate requirements, authorized access,
+          content and timely feedback. The Client is responsible for ensuring
+          that materials supplied for the project may lawfully be used.
+        </li>
+
+        <li>
+          <strong class="term-title">Testing & Acceptance:</strong>
+          Both parties will agree on a reasonable testing period of
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Number of Days]">[Number of Days]</span>
+          calendar days after delivery. The Client will report material
+          deviations from the agreed scope in writing during this period.
+        </li>
+
+        <li>
+          <strong class="term-title">Deployment:</strong>
+          Final deployment will take place after the agreed acceptance
+          requirements and payment conditions have been satisfied and the
+          required hosting and access are available.
+        </li>
+      </ol>
+
+      <!-- Ownership -->
+      <h2 class="section-heading">
+        <span class="section-number">05</span>
+        Intellectual Property & Ownership
+      </h2>
+
+      <ol class="terms">
+        <li>
+          Upon full payment of all agreed project fees, ownership of the
+          project-specific deliverables and source code created specifically
+          for the Client under this Agreement will transfer to the Client,
+          subject to the exclusions below.
+        </li>
+
+        <li>
+          The Developer retains ownership of pre-existing code, reusable
+          components, development tools, frameworks, know-how and materials
+          created independently of this project. Where incorporated into
+          the deliverables, the Client will receive a license to use them
+          as reasonably necessary to operate the delivered project, subject
+          to applicable third-party license terms.
+        </li>
+
+        <li>
+          Third-party software, libraries, plugins and integrations remain
+          subject to their respective ownership and licensing terms.
+        </li>
+
+        <li>
+          Any portfolio display, case study or public use of the Client's
+          confidential information requires the Client's prior permission.
+        </li>
+      </ol>
+
+      <!-- Support -->
+      <h2 class="section-heading">
+        <span class="section-number">06</span>
+        Support & Warranty
+      </h2>
+
+      <ol class="terms">
+        <li>
+          The Developer will provide a complimentary bug-fixing period of
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[30 Days / Other Period]">[30 Days / Other Period]</span>
+          beginning on the agreed launch or acceptance date, as specified
+          here:
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Start Event]">[Start Event]</span>.
+        </li>
+
+        <li>
+          The warranty covers reproducible defects that cause the delivered
+          functionality to materially deviate from the agreed specifications.
+        </li>
+
+        <li>
+          The warranty excludes new features, scope changes, unauthorized
+          modifications, issues caused by third-party services, hosting
+          failures, incompatible software changes and problems caused by
+          incorrect or incomplete Client-supplied data.
+        </li>
+
+        <li>
+          Ongoing maintenance, new development and support after the warranty
+          period will be subject to a separate written agreement or quotation.
+        </li>
+      </ol>
+
+      <!-- Confidentiality -->
+      <h2 class="section-heading">
+        <span class="section-number">07</span>
+        Confidentiality & Data Security
+      </h2>
+
+      <ol class="terms">
+        <li>
+          Both parties agree to take reasonable steps to protect confidential
+          business information, credentials, pricing information and
+          non-public technical details received during the project.
+        </li>
+
+        <li>
+          Confidential information may be disclosed where required by law
+          or with the disclosing party's written permission.
+        </li>
+
+        <li>
+          The parties will use reasonable care when sharing credentials and
+          granting system access. The Client remains responsible for
+          authorizing access to its systems and data.
+        </li>
+      </ol>
+
+      <!-- Termination -->
+      <h2 class="section-heading">
+        <span class="section-number">08</span>
+        Changes, Delays & Termination
+      </h2>
+
+      <ol class="terms">
+        <li>
+          Changes to the agreed scope, deliverables, fees or deadlines must
+          be approved in writing by both parties.
+        </li>
+
+        <li>
+          If either party materially breaches this Agreement, the other party
+          may give written notice describing the breach and allow
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Cure Period]">[Cure Period]</span>
+          days to remedy it, unless a different period is required by
+          applicable law or agreed in writing.
+        </li>
+
+        <li>
+          On termination, the Client will pay for completed work and
+          pre-approved, non-cancellable expenses up to the termination date,
+          subject to applicable law and any written refund arrangements.
+          Any transfer of work product will be subject to the agreed payment
+          and ownership terms.
+        </li>
+      </ol>
+
+      <!-- General -->
+      <h2 class="section-heading">
+        <span class="section-number">09</span>
+        General Terms & Dispute Resolution
+      </h2>
+
+      <ol class="terms">
+        <li>
+          This Agreement and any written, mutually approved project
+          specification or quotation form the understanding between the
+          parties concerning the described project.
+        </li>
+
+        <li>
+          Amendments must be recorded in writing and approved by both parties.
+        </li>
+
+        <li>
+          The parties will first attempt to resolve disputes through
+          good-faith discussion. If unresolved, disputes will be handled
+          under the applicable laws and procedures of the agreed jurisdiction.
+        </li>
+
+        <li>
+          <strong class="term-title">Governing Law / Jurisdiction:</strong>
+          <span class="editable placeholder" contenteditable="true"
+                data-placeholder="[Country / Province / State]">[Country / Province / State]</span>.
+        </li>
+      </ol>
+
+      <div class="info-note">
+        <strong>Important:</strong> Both parties should read this Agreement
+        carefully, complete all placeholders and retain a signed copy.
+        This template should be reviewed for compliance with the laws
+        applicable to the parties and their project.
+      </div>
+
+      <!-- Signatures -->
+      <section class="signature-section">
+        <h2 class="section-heading">
+          <span class="section-number">10</span>
+          Authorization & Signatures
+        </h2>
+
+        <p class="signature-intro">
+          By signing below, the parties acknowledge that they have read,
+          understood and agreed to the terms of this Agreement.
+        </p>
+
+        <div class="signatures">
+
+          <div class="signature-card">
+            <h3>For the Client</h3>
+
+            <div class="signature-line"></div>
+            <p class="signature-caption">Authorized Signature</p>
+
+            <div class="signature-field">
+              Name:
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[Client Name]">[Client Name]</span>
+            </div>
+
+            <div class="signature-field">
+              Designation:
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[Designation]">[Designation]</span>
+            </div>
+
+            <div class="signature-field">
+              Date:
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[DD/MM/YYYY]">[DD/MM/YYYY]</span>
+            </div>
+          </div>
+
+          <div class="signature-card">
+            <h3>For Codixa Solutions</h3>
+
+            <div class="signature-line"></div>
+            <p class="signature-caption">Authorized Signature</p>
+
+            <div class="signature-field">
+              Name:
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[Representative Name]">[Representative Name]</span>
+            </div>
+
+            <div class="signature-field">
+              Designation:
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[Designation]">[Designation]</span>
+            </div>
+
+            <div class="signature-field">
+              Date:
+              <span class="editable placeholder" contenteditable="true"
+                    data-placeholder="[DD/MM/YYYY]">[DD/MM/YYYY]</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer-brand"></span>
+      <span>Website Development Agreement</span>
+      <span>Confidential Business Document</span>
+    </footer>
+
+  </main>
+
+  <script>
+    // Restore the original template placeholders.
+    function resetPlaceholders() {
+      const confirmed = window.confirm(
+        "Reset all editable fields to their original template values?"
+      );
+
+      if (!confirmed) return;
+
+      document.querySelectorAll("[data-placeholder]").forEach((field) => {
+        field.textContent = field.dataset.placeholder;
+      });
+    }
+
+    // Avoid accidentally printing an unfinished browser selection.
+    window.addEventListener("beforeprint", () => {
+      window.getSelection()?.removeAllRanges();
+    });
+  </script>
+
+</body>
+</html>
